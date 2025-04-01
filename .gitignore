@@ -1,0 +1,22 @@
+cat <<EOF > .gitignore
+# Data files
+data/raw/
+data/processed/
+model/
+
+# AWS credentials
+.aws/
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# IDE
+.idea/
+.vscode/
+
+# System
+.DS_Store
+EOF
