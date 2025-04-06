@@ -87,12 +87,6 @@ curl -X POST http://financial-risk-mlops.env.elasticbeanstalk.com/predict \
 ---
 ## 🧱 Architecture Diagram
 
-```mermaid
-graph TD
-    A[CSV Upload to S3] --> B[AWS Lambda - Preprocess]
-    B --> C[S3 Processed Data]
-    C --> D[SageMaker - Model Training]
-    D --> E[S3 - Trained Model Storage]
-    E --> F[Elastic Beanstalk - Flask API]
-    F --> G[User Sends JSON Data for Prediction]
-    G --> H[Flask API Returns Prediction]
+![Architecture Diagram](./architecture.png)
+
+This architecture illustrates the complete pipeline from data ingestion to model deployment using AWS services.
