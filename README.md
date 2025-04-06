@@ -71,14 +71,20 @@ An automated, AI-powered risk prediction system that:
 
 ---
 
-### 🟤 Stage 5: Prediction
+### Stage 5: Prediction
 
 **Request Example**:
 ```bash
 curl -X POST http://financial-risk-mlops.env.elasticbeanstalk.com/predict \
      -H "Content-Type: application/json" \
+     -d '{
+           "loan_amount": 50000,
+           "Credit_Score": 700,
+           ...
+         }'
+```
 
-
+---
 ## 🧱 Architecture Diagram
 
 ```mermaid
