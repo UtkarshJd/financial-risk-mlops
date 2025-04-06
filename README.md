@@ -6,10 +6,8 @@ A complete end-to-end machine learning project to predict financial risk (e.g., 
 
 ## 🚩 Problem Statement
 
-Traditional financial risk assessment methods are:
-- Manual, slow, and error-prone
-- Not scalable for large data
-- Inefficient in meeting regulatory compliance
+Financial institutions, lenders, and investors face significant challenges in assessing financial risks such as loan defaults, credit risk, and market volatility. Traditional risk evaluation methods often rely on manual reviews and outdated statistical models, leading to delays, inaccuracies, and inefficiencies in decision-making.
+To mitigate these issues, we propose an AI-driven Financial Risk Prediction System that leverages machine learning models to predict financial risks with high accuracy. The system automates data ingestion, model training, and deployment using AWS MLOps best practices, ensuring scalability, efficiency, and real-time decision-making for financial institutions.
 
 ---
 
