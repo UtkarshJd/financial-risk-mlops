@@ -35,6 +35,49 @@ An automated, AI-powered risk prediction system that:
 | CloudWatch         | Logs, metrics, and monitoring                    |
 
 ---
+## 🔄 Workflow
+
+### Stage 1: Data Ingestion
+- **Upload Raw Data**:  
+  Users upload CSV files (e.g., `Loan_Default.csv`) to the S3 bucket.
+
+---
+
+### Stage 2: Data Preprocessing (AWS Lambda)
+- **Trigger**: `S3 PutObject` event in the `raw/` folder.
+- **Lambda Function**:
+  - Cleans data (handles missing values, encodes categories).
+  - Splits data into train/test sets.
+  - Saves processed files to `processed/` folder in S3.
+- **Code**: `data_preprocessing.py`
+
+---
+
+### Stage 3: Model Training (Amazon SageMaker)
+- **Training Job**:
+  - Pulls processed data from `s3://financial-risk-mlops/processed/`
+  - Uses **XGBoost** algorithm for binary classification.
+  - Saves the trained model to `s3://financial-risk-mlops/models/risk_model.pkl`
+
+---
+
+### Stage 4: Model Deployment (Elastic Beanstalk)
+- **Flask API**:
+  - **Endpoint**: `http://your-env.elasticbeanstalk.com/predict`
+  - Loads the latest model from S3 on startup.
+  - Accepts JSON input and returns predictions.
+- **Docker Container**:
+  - Packages the Flask app, dependencies, and environment.
+
+---
+
+### 🟤 Stage 5: Prediction
+
+**Request Example**:
+```bash
+curl -X POST http://financial-risk-mlops.env.elasticbeanstalk.com/predict \
+     -H "Content-Type: application/json" \
+
 
 ## 🧱 Architecture Diagram
 
