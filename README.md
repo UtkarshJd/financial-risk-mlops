@@ -1,6 +1,6 @@
 # 💰 AI-Powered Financial Risk Prediction System (AWS MLOps)
 
-A complete end-to-end machine learning project to predict financial risk (e.g., loan default) using AWS services such as S3, Lambda, SageMaker, and Elastic Beanstalk with Dockerized Flask API.
+A complete end-to-end MLOps project to predict financial risk (e.g., loan default) using AWS services such as S3, Lambda, SageMaker, and Elastic Beanstalk with Dockerized Flask API.
 
 ---
 
