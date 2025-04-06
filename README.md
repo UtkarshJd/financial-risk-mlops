@@ -86,5 +86,5 @@ curl -X POST http://financial-risk-mlops.env.elasticbeanstalk.com/predict \
 
 ---
 ## 🧱 Architecture Diagram
-
+![Architecture Diagram](./architecture.png)
 This architecture illustrates the complete pipeline from data ingestion to model deployment using AWS services.
